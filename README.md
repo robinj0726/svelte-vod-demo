@@ -1,1 +1,1 @@
-# vod-demo
+# svelte-vod-demo
