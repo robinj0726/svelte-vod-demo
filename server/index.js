@@ -1,5 +1,6 @@
 const Koa = require('koa');
 const Router = require('koa-router');
+const fs = require('fs/promises');
 
 const router = new Router();
 const app = new Koa();
@@ -9,8 +10,13 @@ app.use(serve(__dirname + '/../client/dist/'));
 
 const port = process.env.PORT || 3000;
 
-router.get('/media/list', ctx => {
-    ctx.body = ["1", "2"];
+router.get('/media/list', async ctx => {
+    let files = [];
+    const dir = await fs.readdir('../media')
+    for (const filename of dir) {
+        files.push(filename)
+    }
+    ctx.body = files;
 });
 
 app.use(router.routes());
