@@ -1,11 +1,13 @@
 <script>
+  import List from './lib/List.svelte'
 </script>
 
+<header>
+  <h1>VOD Demo</h1>
+</header>
 <main>
-  <div class="title">
-    <h1>VOD Demo</h1>
-  </div>
   <button class="refresh-btn">Refresh</button>
+  <List />
 </main>
 
 <style>
