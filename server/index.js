@@ -28,7 +28,7 @@ router.get('/media/list', async ctx => {
 router.get('/media/file/:filename', async ctx => {
     let { filename } = ctx.params;
     await ctx.render('index', {
-        title: filename
+        mediafile: filename
     })
 });
 
