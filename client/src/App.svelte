@@ -6,12 +6,15 @@
 </script>
 
 <header>
-  <h1>VOD Demo</h1>
+    <h1>VOD Demo</h1>
 </header>
 <main>
-  <button class="refresh-btn" on:click={() => {
-    listPromise = LoadMediaList();
-  }}>Refresh</button>
+  <button
+    class="refresh-btn"
+    on:click={() => {
+      listPromise = LoadMediaList();
+    }}>Refresh</button
+  >
   {#await listPromise}
     <!-- Loading… -->
   {:then list}

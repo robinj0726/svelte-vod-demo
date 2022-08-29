@@ -5,7 +5,7 @@
 <ul>
     {#each files as el}
         <div>
-            <a href={"/vod/" + el}>{el}</a>
+            <a href={"/media/file/" + el}>{el}</a>
         </div>
     {/each}
 </ul>
