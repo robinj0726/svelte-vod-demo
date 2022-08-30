@@ -18,7 +18,7 @@ const port = process.env.PORT || 3000;
 
 router.get('/media/list', async ctx => {
     let files = [];
-    const dir = await fs.readdir('../media')
+    const dir = await fs.readdir('/rec')
     for (const filename of dir) {
         if (filename.endsWith('.mp4')) {
             files.push(filename)
