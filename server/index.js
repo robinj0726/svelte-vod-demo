@@ -20,7 +20,9 @@ router.get('/media/list', async ctx => {
     let files = [];
     const dir = await fs.readdir('../media')
     for (const filename of dir) {
-        files.push(filename)
+        if (filename.endsWith('.mp4')) {
+            files.push(filename)
+        }
     }
     ctx.body = files;
 });
